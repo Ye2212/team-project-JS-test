@@ -11,18 +11,19 @@ refs.form.addEventListener('submit', onFormSubmit);
 let searchQuery = '';
 let page = 1;
 
-// console.log(refs.heroNotificationText)
 
-console.log(fetchTrendingMovies(1));
-// renderGalleryMarkup(responseTrending);
-// console.log(responseTrending);
+async function renderTrendingMovies (){
+    const response = await fetchTrendingMovies(1);
+ renderGalleryMarkup(response)
+}
 
+renderTrendingMovies()
 
 async function onFormSubmit (e){
 e.preventDefault();
 
 searchQuery = e.currentTarget.searchQuery.value;
-// console.log(searchQuery);
+
 if (searchQuery.trim() === '') {
 refs.heroNotificationText.classList.remove('is-hidden');
 return;
@@ -30,13 +31,12 @@ return;
 }
 
 try {
-// refs.heroNotificationText.classList.add('.is-hidden');
+
     const response = await fetchMoviesBySearch(page, searchQuery);
     if (response.results.length === 0) {
         refs.heroNotificationText.classList.remove('is-hidden');
         return;
     }
-    // console.log(response);
     refs.form.searchQuery.value = '';
     refs.gallery.innerHTML = '';
     renderGalleryMarkup(response);

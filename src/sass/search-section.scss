@@ -1,0 +1,30 @@
+.notification-text {
+font-family: Roboto;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: center;
+color: #FF001B;
+
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    outline: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    color: #ffffff;
+    width: inherit;
+}

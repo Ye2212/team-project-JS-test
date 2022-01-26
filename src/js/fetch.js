@@ -5,7 +5,7 @@ const API_KEY = "07e84016aeec599a5623106dff9619bb";
 
 
 // export default 
-async function fetchMovies(page, searchData){
+async function fetchMoviesBySearch(page, searchData){
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&page=${page}&query=${searchData}`;
     // const response = await fetch(url);
     // const data = await response.json();
@@ -14,15 +14,18 @@ return await axios.get(`${url}`).then(response => response.data);
 }
 
 // export default 
-async function fetchTrendingMovies(){
-    const urlTrending = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`;
-    return await axios.get(`${urlTrending}`).then(response => console.log(response.data))
+async function fetchTrendingMovies(page){
+    const urlTrending = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`;
+    const responseTrending = await fetch(urlTrending);
+    const data = await responseTrending.json();
+    return data;
+    // return await axios.get(`${urlTrending}`).then(response => response.data)
 }
 
 
 
 
-export { fetchMovies, fetchTrendingMovies };
+export { fetchMoviesBySearch, fetchTrendingMovies };
 
 
 // language

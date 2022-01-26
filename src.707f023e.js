@@ -84,4 +84,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"handlebars/dist/handlebars.runtime":"pAws"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=require("./js/refs"),t=require("./js/fetch"),r=l(require("./js/simplelightbox")),s=l(require("./js/scroll-smooth")),o=l(require("./templates/movie-card.hbs"));function l(e){return e&&e.__esModule?e:{default:e}}e.refs.form.addEventListener("submit",a);let i="",n=1;async function a(e){e.preventDefault(),""===(i=e.currentTarget.searchQuery.value).trim()&&console.log("Please enter movie title");try{const e=await(0,t.fetchMovies)(n,i);console.log(e),u(e),(0,s.default)()}catch(r){console.log(r)}}function u(e){const t=e.results.map(e=>(0,o.default)(e)).join("");gallery.insertAdjacentHTML("beforeend",t),(0,r.default)()}
 },{"./sass/main.scss":"clu1","./js/refs":"VyiV","./js/fetch":"spyz","./js/simplelightbox":"vLDn","./js/scroll-smooth":"IrrO","./templates/movie-card.hbs":"WSZA"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-JS-test/src.4d69739b.js.map
+//# sourceMappingURL=/team-project-JS-test/src.707f023e.js.map
